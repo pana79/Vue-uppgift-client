@@ -9,7 +9,7 @@
 
       <!-- <v-toolbar-title>The Best Webshop</v-toolbar-title> -->
       <router-link :to="{name: 'Home'}"> <v-btn text rounded>home</v-btn></router-link> 
-     <router-link :to="{name: 'products'}"> <v-btn text rounded>Products</v-btn></router-link> 
+    <router-link :to="{name: 'product-List'}"> <v-btn text rounded>Products</v-btn></router-link> 
       <v-spacer></v-spacer>
 
       <v-btn icon>

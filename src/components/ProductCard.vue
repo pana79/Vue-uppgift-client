@@ -9,10 +9,10 @@
       :src="product.image"
     />
       <v-card-title class="header">{{ product.name }}</v-card-title>
+  
 
-
-    <v-card-subtitle class="pb-0">Pris: {{ product.price}} kr</v-card-subtitle>
-
+     <v-card-subtitle class="pb-0">Pris: {{ product.price}} kr</v-card-subtitle>
+   
     <v-card-text class="text--primary">
       
 
@@ -20,20 +20,13 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn
-        color="orange" 
-       
-        
-      >
-        Add to cart
-      </v-btn>
+      <v-btn color="orange">Add to cart</v-btn>
         <v-spacer></v-spacer>
-      <v-btn
-        color="orange"
-        text
-      >
+        <router-link :to="{name: 'product-show', params: {id: product.id}}">
+        <v-btn color="orange" text>
         Read more
       </v-btn>
+      </router-link> 
     </v-card-actions>
   </v-card>
 </template>
