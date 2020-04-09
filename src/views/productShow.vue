@@ -21,24 +21,25 @@
 </template>
 
 <script>
-import EventService from '@/services/ProductService.js'
+
+import { mapState } from 'vuex'
+
 export default {
-    props: ['id'],
-    data() {
-        return {
-            product:{}
-        }
-    },
+    props: ["id"],
+  
     created() {
-        EventService.getProduct(this.id)
-            .then(response => {
-                this.product = response.data
-                console.log(response.data)
-            })
-            .catch ( error => {
-                console.log('there was an error:', error.response)
-            })
-    } 
+        this.$store.dispatch('getProductById', this.id)
+
+        // EventService.getProduct(this.id)
+        //     .then(response => {
+        //         this.product = response.data
+        //         console.log(response.data)
+        //     })
+        //     .catch ( error => {
+        //         console.log('there was an error:', error.response)
+        //     })
+    }, 
+    computed: mapState(['product'])
 }
 </script>
 

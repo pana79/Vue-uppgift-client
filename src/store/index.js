@@ -17,8 +17,10 @@ export default new Vuex.Store({
       state.products = products
       console.log(state.products)
     },
-    GET_PRODUCT_BYID(state, id) {
-      state.product = state.products.filter(p => p.id == id)[0]
+    GET_PRODUCT_BYID(state, product) {
+      // state.product = state.products.filter(p => p.id == id)[0]
+      state.product =product
+      console.log(state.product)
     }
   },
   actions: {
@@ -34,7 +36,15 @@ export default new Vuex.Store({
       })
     },
     getProductById({commit}, id) {
-      commit('GET_PRODUCT_BYID', id)
+      console.log('getProductById')
+      ProductService.getProduct(id)
+      .then( response => {
+        commit('GET_PRODUCT_BYID', response.data)
+      })
+      .catch(error => {
+        console('There was an error: ' + error.response)
+      })
+     
     }},
   getters: {
     products(state) {

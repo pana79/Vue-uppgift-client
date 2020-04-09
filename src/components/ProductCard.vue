@@ -1,5 +1,4 @@
 <template>
-<div>
   <v-card class="ma-5" max-width="300">
     <v-img class="white--text align-end" height="200px" :src="product.image"/>
     <v-card-title class="black--text">{{ product.name }}</v-card-title>
@@ -13,7 +12,6 @@
       </router-link> 
     </v-card-actions>
   </v-card>
-  </div>
 </template>
 
 <script>
