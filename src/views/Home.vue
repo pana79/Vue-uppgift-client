@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <h1>Välkommen till vår webshop</h1>
+    <h1>Welcome to our store</h1>
   </v-app>
 </template>
 
