@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:4000',
     withCredentials: false,
     headers: {
         Accept: 'application/json',
@@ -14,6 +14,8 @@ export default {
         return apiClient.get('/products')
     },
     getProduct(id) {
+        // console.log('3. ****** ProductService getProduct api call *****')
+        // console.log(id)
         return apiClient.get('/products/'+id)
     }
 }

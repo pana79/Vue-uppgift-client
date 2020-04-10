@@ -7,7 +7,7 @@
     <v-card-actions>
       <v-btn color="orange">Add to cart</v-btn>
         <v-spacer></v-spacer>
-        <router-link :to="{name: 'product-show', params: {id: product.id}}">
+        <router-link :to="{name: 'product-show', params: {id: product._id} }">
         <v-btn color="orange" text> Read more</v-btn>
       </router-link> 
     </v-card-actions>

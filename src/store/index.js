@@ -7,25 +7,26 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cart: [],
-    products: [
-        ],
+    products: [],
     product: null
   },
   mutations: {
     SET_PRODUCTS(state, products) {
-      console.log('SET_PRODUCTS')
-      state.products = products
-      console.log(state.products)
+     // console.log('SET_PRODUCTS')
+      state.products = products.products
+     // console.log(state.products)
     },
     GET_PRODUCT_BYID(state, product) {
+     // console.log('5 .SET_PRODUCT')
       // state.product = state.products.filter(p => p.id == id)[0]
-      state.product =product
-      console.log(state.product)
+      state.product =product.product
+      
+     // console.log(state.product)
     }
   },
   actions: {
     fetchProducts({commit}) {
-      console.log('getProducts')
+    //  console.log('getProducts')
       ProductService.getProducts()
       .then(response => {
           commit('SET_PRODUCTS',response.data)
@@ -36,9 +37,10 @@ export default new Vuex.Store({
       })
     },
     getProductById({commit}, id) {
-      console.log('getProductById')
+    //  console.log('2. getProductById')
       ProductService.getProduct(id)
       .then( response => {
+     //   console.log( '4. ' +response.data)
         commit('GET_PRODUCT_BYID', response.data)
       })
       .catch(error => {

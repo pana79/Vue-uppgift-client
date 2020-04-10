@@ -28,16 +28,9 @@ export default {
     props: ["id"],
   
     created() {
+        // console.log('1. ******ProductShow dispatch getProductById****')
+       // console.log(this.id)
         this.$store.dispatch('getProductById', this.id)
-
-        // EventService.getProduct(this.id)
-        //     .then(response => {
-        //         this.product = response.data
-        //         console.log(response.data)
-        //     })
-        //     .catch ( error => {
-        //         console.log('there was an error:', error.response)
-        //     })
     }, 
     computed: mapState(['product'])
 }
